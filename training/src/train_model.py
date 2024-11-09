@@ -104,6 +104,8 @@ def train(config: DictConfig):
     # Find best model
     best_model = optimize(objective, space)
 
+    print(best_model)
+    print(abspath(config.model.path))
     # Save model
     joblib.dump(best_model, abspath(config.model.path))
 

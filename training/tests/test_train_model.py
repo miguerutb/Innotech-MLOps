@@ -31,14 +31,14 @@ def test_xgboost():
     train_df = pd.concat([X_train, y_train], axis=1)
     test_df = pd.concat([X_test, y_test], axis=1)
 
-    train_ds = Dataset(train_df,cat_features=["City_Bangalore",
-                                              "City_New Delhi", 
-                                              "City_Pune",
-                                              "EverBenched_T.Yes"], label='LeaveOrNot')
-    validation_ds = Dataset(test_df,cat_features=["City_Bangalore",
-                                              "City_New Delhi", 
-                                              "City_Pune",
-                                              "EverBenched_T.Yes"],label='LeaveOrNot')
+    train_ds = Dataset(train_df,cat_features=['City_Bangalore',
+                                              'City_New Delhi', 
+                                              'City_Pune',
+                                              'EverBenched_T.Yes'], label='LeaveOrNot')
+    validation_ds = Dataset(test_df,cat_features=['City_Bangalore',
+                                              'City_New Delhi', 
+                                              'City_Pune',
+                                              'EverBenched_T.Yes'],label='LeaveOrNot')
     
     fi = calculate_feature_importance(model, train_ds)
     train_proba = model.predict_proba(X_train)
@@ -52,5 +52,5 @@ def test_xgboost():
             feature_importance=fi, y_proba_train=train_proba, y_proba_test=test_proba)
     print(result)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     test_xgboost()

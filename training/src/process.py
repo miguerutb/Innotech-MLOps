@@ -14,7 +14,7 @@ def get_data(raw_path: str):
 def get_features(target: str, features: list, data: pd.DataFrame):
     feature_str = ' + '.join(features)
     y, X = dmatrices(
-        f"{target} ~ {feature_str} - 1", data=data, return_type='dataframe'
+        f'{target} ~ {feature_str} - 1', data=data, return_type='dataframe'
     )
     return y, X
 
