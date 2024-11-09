@@ -111,4 +111,5 @@ def train(config: DictConfig):
 
 
 if __name__ == '__main__':
+    
     train()
